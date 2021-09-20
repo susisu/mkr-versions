@@ -14,12 +14,19 @@
     "lint:eslint": "eslint '*.js' scripts",
     "lint-fix:eslint": "eslint --fix '*.js' scripts",
     "lint:prettier": "prettier --check '*.js' scripts",
-    "lint-fix:prettier": "prettier --write '*.js' scripts"
+    "lint-fix:prettier": "prettier --write '*.js' scripts",
+    "update-manifest": "ts-node scripts/update-manifest.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@actions/github": "^5.0.0",
+    "@actions/tool-cache": "^1.7.1",
+    "@octokit/types": "^6.28.1",
+    "@types/node": "^16.9.4",
+    "@types/semver": "^7.3.8",
+    "semver": "^7.3.5"
+  },
   "devDependencies": {
     "@susisu/eslint-config": "^0.0.39",
-    "@types/node": "^16.9.4",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-eslint-comments": "^3.2.0",

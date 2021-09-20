@@ -22,6 +22,7 @@ module.exports = {
         NodeJS: true,
       },
       rules: {
+        "@typescript-eslint/naming-convention": "off",
         "eslint-comments/no-unused-disable": "error",
       },
     },
