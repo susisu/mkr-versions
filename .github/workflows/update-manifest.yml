@@ -14,6 +14,8 @@ jobs:
         node-version: '16'
     - run: yarn install --frozen-lockfile
     - run: yarn update-manifest
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
     - uses: peter-evans/create-pull-request@v3
       with:
         branch: feat/update-manifest
