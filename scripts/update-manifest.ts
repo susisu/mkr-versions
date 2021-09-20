@@ -4,15 +4,22 @@ import * as github from "@actions/github";
 import type * as tc from "@actions/tool-cache";
 import type { Endpoints } from "@octokit/types";
 import * as semver from "semver";
+import { diffStringsUnified } from "jest-diff";
 
 async function main(): Promise<void> {
   const token = process.env["GITHUB_TOKEN"];
   if (!token) {
     throw new Error("GITHUB_TOKEN must be defined");
   }
+  const test = process.argv[2] === "test";
+
   const releases = await listReleases(token);
   const manifest = generateManifest(releases);
-  await writeManifest(manifest);
+  if (test) {
+    await testManifest(manifest);
+  } else {
+    await writeManifest(manifest);
+  }
 }
 
 type Release = Endpoints["GET /repos/{owner}/{repo}/releases"]["response"]["data"][number];
@@ -108,15 +115,31 @@ function getAssetInfo(asset: Asset): AssetInfo | undefined {
   return { platform, arch };
 }
 
-async function writeManifest(manifest: Manifest): Promise<void> {
-  const file = path.resolve(__dirname, "..", "versions-manifest.json");
-  const content =
+function dumpManifest(manifest: Manifest): string {
+  return (
     JSON.stringify(
       [...manifest].sort((a, b) => semver.compare(b.version, a.version)),
       undefined,
       "  "
-    ) + "\n";
-  await fs.writeFile(file, content, "utf-8");
+    ) + "\n"
+  );
+}
+
+const manifestFile = path.resolve(__dirname, "..", "versions-manifest.json");
+
+async function testManifest(manifest: Manifest): Promise<void> {
+  const json = dumpManifest(manifest);
+  const content = await fs.readFile(manifestFile, "utf-8");
+  if (json !== content) {
+    // eslint-disable-next-line no-console
+    console.error(diffStringsUnified(content, json));
+    throw new Error("manifest did not match");
+  }
+}
+
+async function writeManifest(manifest: Manifest): Promise<void> {
+  const json = dumpManifest(manifest);
+  await fs.writeFile(manifestFile, json, "utf-8");
 }
 
 main().catch(err => {
