@@ -1,0 +1,24 @@
+name: 'Update Manifest'
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+    - run: yarn install --frozen-lockfile
+    - run: yarn update-manifest
+    - uses: peter-evans/create-pull-request@v3
+      with:
+        branch: feat/update-manifest
+        commit-message: 'feat: update manifest'
+        title: 'Update Manifest'
+        body: |
+          Update Manifest
+        delete-branch: true
