@@ -55,64 +55,52 @@ function convertRelease(release: Release): tc.IToolRelease | undefined {
     version,
     stable: !release.prerelease,
     release_url: release.html_url,
-    files: release.assets.flatMap(asset => {
-      const file = convertAsset(asset);
-      return file ? [file] : [];
-    }),
+    files: release.assets.flatMap(asset => convertAsset(asset)),
   };
 }
 
-function convertAsset(asset: Asset): tc.IToolReleaseFile | undefined {
-  const info = getAssetInfo(asset);
-  if (!info) {
-    return undefined;
-  }
-  return {
+function convertAsset(asset: Asset): readonly tc.IToolReleaseFile[] {
+  const targets = getTargets(asset);
+  return targets.map(target => ({
     filename: asset.name,
-    platform: info.platform,
-    arch: info.arch,
+    platform: target.platform,
+    arch: target.arch,
     download_url: asset.browser_download_url,
-  };
+  }));
 }
 
-type AssetInfo = Readonly<{
+type Target = Readonly<{
   platform: string;
   arch: string;
 }>;
 
 const archiveExts: readonly string[] = ["tar.gz", "zip"];
 
-const platformMap: ReadonlyMap<string, string> = new Map([
-  ["linux", "linux"],
-  ["darwin", "darwin"],
-  ["windows", "win32"],
+const platformsMap: ReadonlyMap<string, readonly string[]> = new Map([
+  ["linux", ["linux"]],
+  ["darwin", ["darwin"]],
+  ["windows", ["win32"]],
 ]);
 
-const archMap: ReadonlyMap<string, string> = new Map([
-  ["arm", "arm"],
-  ["arm64", "arm64"],
-  ["386", "ia32"],
-  ["amd64", "x64"],
+const archsMap: ReadonlyMap<string, readonly string[]> = new Map([
+  ["arm", ["arm"]],
+  ["arm64", ["arm64"]],
+  ["386", ["ia32"]],
+  ["amd64", ["x64"]],
 ]);
 
-function getAssetInfo(asset: Asset): AssetInfo | undefined {
+function getTargets(asset: Asset): readonly Target[] {
   const r = /^mkr_([^.]+)_([^.]+)\.(.+)$/.exec(asset.name);
   if (!r) {
-    return undefined;
+    return [];
   }
   const [, p, a, x] = r;
   if (!archiveExts.includes(x)) {
-    return undefined;
+    return [];
   }
-  const platform = platformMap.get(p);
-  if (!platform) {
-    return undefined;
-  }
-  const arch = archMap.get(a);
-  if (!arch) {
-    return undefined;
-  }
-  return { platform, arch };
+  const platforms = platformsMap.get(p) ?? [];
+  const archs = archsMap.get(a) ?? [];
+  return platforms.flatMap(platform => archs.map(arch => ({ platform, arch })));
 }
 
 function dumpManifest(manifest: Manifest): string {
