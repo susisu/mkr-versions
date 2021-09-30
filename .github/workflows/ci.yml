@@ -14,6 +14,7 @@ jobs:
           node-version: '16'
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile
+      - run: yarn lint
       - run: yarn test-manifest
         env:
           GITHUB_TOKEN: ${{ github.token }}
