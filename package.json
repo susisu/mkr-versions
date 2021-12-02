@@ -22,19 +22,19 @@
     "@actions/github": "^5.0.0",
     "@actions/tool-cache": "^1.7.1",
     "@octokit/types": "^6.34.0",
-    "@types/node": "^16.11.0",
+    "@types/node": "^16.11.11",
     "@types/semver": "^7.3.9",
     "jest-diff": "^27.2.5",
     "semver": "^7.3.5"
   },
   "devDependencies": {
-    "@susisu/eslint-config": "^0.0.40",
-    "eslint": "^7.32.0",
+    "@susisu/eslint-config": "^0.0.41",
+    "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.4.1",
-    "ts-node": "^10.3.0",
+    "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   }
 }
