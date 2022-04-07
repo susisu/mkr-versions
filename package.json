@@ -25,7 +25,7 @@
     "@types/node": "^17.0.23",
     "@types/semver": "^7.3.9",
     "jest-diff": "^27.5.1",
-    "semver": "^7.3.5"
+    "semver": "^7.3.6"
   },
   "devDependencies": {
     "@susisu/eslint-config": "^0.0.48",
