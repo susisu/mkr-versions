@@ -21,7 +21,7 @@
   "dependencies": {
     "@actions/github": "^5.0.3",
     "@actions/tool-cache": "^2.0.1",
-    "@octokit/types": "^6.40.0",
+    "@octokit/types": "^7.1.0",
     "@types/node": "^18.6.1",
     "@types/semver": "^7.3.10",
     "jest-diff": "^28.1.3",
