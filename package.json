@@ -8,15 +8,16 @@
   },
   "author": "Susisu <susisu2413@yahoo.co.jp>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "lint": "run-s lint:eslint lint:prettier",
     "lint-fix": "run-s lint-fix:eslint lint-fix:prettier",
-    "lint:eslint": "eslint '*.js' scripts",
-    "lint-fix:eslint": "eslint --fix '*.js' scripts",
-    "lint:prettier": "prettier --check '*.js' scripts",
-    "lint-fix:prettier": "prettier --write '*.js' scripts",
-    "update-manifest": "ts-node scripts/update-manifest.ts",
-    "test-manifest": "ts-node scripts/update-manifest.ts test"
+    "lint:eslint": "eslint '*.cjs' scripts",
+    "lint-fix:eslint": "eslint --fix '*.cjs' scripts",
+    "lint:prettier": "prettier --check '*.cjs' scripts",
+    "lint-fix:prettier": "prettier --write '*.cjs' scripts",
+    "update-manifest": "ts-node --esm scripts/update-manifest.ts",
+    "test-manifest": "ts-node --esm scripts/update-manifest.ts test"
   },
   "dependencies": {
     "@actions/github": "^5.0.3",

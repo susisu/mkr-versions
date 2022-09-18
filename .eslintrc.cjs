@@ -27,7 +27,7 @@ module.exports = {
       },
     },
     {
-      files: ["*.js"],
+      files: ["*.cjs"],
       extends: [
         "@susisu/eslint-config/preset/js",
         "prettier",

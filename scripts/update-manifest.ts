@@ -1,9 +1,10 @@
-import * as fs from "fs/promises";
-import * as path from "path";
-import * as github from "@actions/github";
-import type * as tc from "@actions/tool-cache";
-import type { Endpoints } from "@octokit/types";
-import * as semver from "semver";
+import fs from "node:fs/promises";
+import path from "node:path";
+import url from "node:url";
+import github from "@actions/github";
+import type tc from "@actions/tool-cache";
+import type octokit from "@octokit/types";
+import semver from "semver";
 import { diffStringsUnified } from "jest-diff";
 
 async function main(): Promise<void> {
@@ -22,7 +23,7 @@ async function main(): Promise<void> {
   }
 }
 
-type Release = Endpoints["GET /repos/{owner}/{repo}/releases"]["response"]["data"][number];
+type Release = octokit.Endpoints["GET /repos/{owner}/{repo}/releases"]["response"]["data"][number];
 type Asset = Release["assets"][number];
 
 async function listReleases(token: string): Promise<Release[]> {
@@ -113,7 +114,8 @@ function dumpManifest(manifest: Manifest): string {
   );
 }
 
-const manifestFile = path.resolve(__dirname, "..", "versions-manifest.json");
+const filename = url.fileURLToPath(import.meta.url);
+const manifestFile = path.resolve(path.dirname(filename), "..", "versions-manifest.json");
 
 async function testManifest(manifest: Manifest): Promise<void> {
   const json = dumpManifest(manifest);
