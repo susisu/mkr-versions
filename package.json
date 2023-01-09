@@ -29,7 +29,7 @@
     "semver": "^7.3.8"
   },
   "devDependencies": {
-    "@susisu/eslint-config": "^0.0.59",
+    "@susisu/eslint-config": "^0.0.60",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
