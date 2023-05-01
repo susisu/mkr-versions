@@ -22,7 +22,7 @@
   "dependencies": {
     "@actions/github": "^5.1.1",
     "@actions/tool-cache": "^2.0.1",
-    "@octokit/types": "^9.1.2",
+    "@octokit/types": "^9.2.0",
     "@types/node": "^18.15.13",
     "@types/semver": "^7.3.13",
     "jest-diff": "^29.5.0",
