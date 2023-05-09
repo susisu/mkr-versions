@@ -24,7 +24,7 @@
     "@actions/tool-cache": "^2.0.1",
     "@octokit/types": "^9.1.2",
     "@types/node": "^18.15.13",
-    "@types/semver": "^7.3.13",
+    "@types/semver": "^7.5.0",
     "jest-diff": "^29.5.0",
     "semver": "^7.5.0"
   },
