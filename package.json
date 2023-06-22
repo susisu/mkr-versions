@@ -16,6 +16,7 @@
     "lint-fix:eslint": "eslint --fix '*.cjs' scripts",
     "lint:prettier": "prettier --check '*.cjs' scripts",
     "lint-fix:prettier": "prettier --write '*.cjs' scripts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "update-manifest": "ts-node --esm scripts/update-manifest.ts",
     "test-manifest": "ts-node --esm scripts/update-manifest.ts test"
   },
