@@ -17,8 +17,8 @@
     "lint:prettier": "prettier --check '*.cjs' scripts",
     "lint-fix:prettier": "prettier --write '*.cjs' scripts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "update-manifest": "ts-node --esm scripts/update-manifest.ts",
-    "test-manifest": "ts-node --esm scripts/update-manifest.ts test"
+    "update-manifest": "node --loader ts-node/esm scripts/update-manifest.ts",
+    "test-manifest": "node --loader ts-node/esm scripts/update-manifest.ts test"
   },
   "dependencies": {
     "@actions/github": "^5.1.1",
