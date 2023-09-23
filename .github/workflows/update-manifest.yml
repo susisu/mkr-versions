@@ -23,5 +23,5 @@ jobs:
           commit-message: 'feat: update manifest'
           title: 'Update Manifest'
           body: |
-            Update Manifest
+            See [releases](https://github.com/mackerelio/mkr/releases)
           delete-branch: true
