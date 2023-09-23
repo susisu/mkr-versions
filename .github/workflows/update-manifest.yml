@@ -9,12 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - uses: actions/setup-node@v3
         with:
           node-version: '20'
-          cache: 'yarn'
-      - run: yarn install --frozen-lockfile
-      - run: yarn update-manifest
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm update-manifest
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - uses: peter-evans/create-pull-request@v4
