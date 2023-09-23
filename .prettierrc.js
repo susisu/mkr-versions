@@ -9,6 +9,6 @@ export default {
   trailingComma: "es5",
   bracketSpacing: true,
   bracketSameLine: false,
-  arrowParens: "avoid",
+  arrowParens: "always",
   endOfLine: "lf",
 };

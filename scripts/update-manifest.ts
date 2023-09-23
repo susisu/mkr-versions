@@ -38,7 +38,7 @@ async function listReleases(token: string): Promise<Release[]> {
 type Manifest = readonly tc.IToolRelease[];
 
 function generateManifest(releases: readonly Release[]): Manifest {
-  return releases.flatMap(release => {
+  return releases.flatMap((release) => {
     const toolRelease = convertRelease(release);
     return toolRelease ? [toolRelease] : [];
   });
@@ -56,13 +56,13 @@ function convertRelease(release: Release): tc.IToolRelease | undefined {
     version,
     stable: !release.prerelease,
     release_url: release.html_url,
-    files: release.assets.flatMap(asset => convertAsset(asset)),
+    files: release.assets.flatMap((asset) => convertAsset(asset)),
   };
 }
 
 function convertAsset(asset: Asset): readonly tc.IToolReleaseFile[] {
   const targets = getTargets(asset);
-  return targets.map(target => ({
+  return targets.map((target) => ({
     filename: asset.name,
     platform: target.platform,
     arch: target.arch,
@@ -101,7 +101,7 @@ function getTargets(asset: Asset): readonly Target[] {
   }
   const platforms = platformsMap.get(p) ?? [];
   const archs = archsMap.get(a) ?? [];
-  return platforms.flatMap(platform => archs.map(arch => ({ platform, arch })));
+  return platforms.flatMap((platform) => archs.map((arch) => ({ platform, arch })));
 }
 
 function dumpManifest(manifest: Manifest): string {
@@ -132,7 +132,7 @@ async function writeManifest(manifest: Manifest): Promise<void> {
   await fs.writeFile(manifestFile, json, "utf-8");
 }
 
-main().catch(err => {
+main().catch((err) => {
   // eslint-disable-next-line no-console
   console.error(String(err));
   process.exitCode = 1;
