@@ -10,12 +10,10 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "lint": "run-s lint:eslint lint:prettier",
-    "lint-fix": "run-s lint-fix:eslint lint-fix:prettier",
-    "lint:eslint": "eslint '*.js' scripts",
-    "lint-fix:eslint": "eslint --fix '*.js' scripts",
-    "lint:prettier": "prettier --check '*.js' scripts",
-    "lint-fix:prettier": "prettier --write '*.js' scripts",
+    "format": "prettier --write '*.js' scripts",
+    "format:check": "prettier --check '*.js' scripts",
+    "lint": "eslint --fix '*.js' scripts",
+    "lint:check": "eslint '*.js' scripts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "update-manifest": "tsx scripts/update-manifest.ts",
     "test-manifest": "tsx scripts/update-manifest.ts test"
