@@ -2,7 +2,6 @@
   "compilerOptions": {
     "rootDir": "scripts",
     "outDir": "bin",
-    "incremental": true,
     "target": "esnext",
     "module": "nodenext",
     "moduleResolution": "nodenext",
@@ -11,7 +10,7 @@
     "strict": true,
     "sourceMap": true,
     "declaration": true,
-    "declarationMap": true,
+    "declarationMap": false,
     "skipLibCheck": true
   },
   "include": [
