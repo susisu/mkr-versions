@@ -8,7 +8,7 @@ export default [
       files: ["scripts/**/*.ts"],
     },
     [
-      config.tsTypeChecked,
+      config.tsTypeChecked(),
       prettierConfig,
       {
         languageOptions: {
@@ -32,7 +32,7 @@ export default [
       files: ["*.js"],
     },
     [
-      config.js,
+      config.js(),
       prettierConfig,
       {
         languageOptions: {
