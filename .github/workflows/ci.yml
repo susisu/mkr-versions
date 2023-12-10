@@ -20,6 +20,7 @@ jobs:
       - run: pnpm install
       - run: pnpm format
       - run: pnpm lint
+      - run: pnpm typecheck
       - run: pnpm test-manifest
         env:
           GITHUB_TOKEN: ${{ github.token }}
