@@ -1248,80 +1248,6 @@
     ]
   },
   {
-    "version": "0.43.1",
-    "stable": true,
-    "release_url": "https://github.com/mackerelio/mkr/releases/tag/v0.43.1",
-    "files": [
-      {
-        "filename": "mkr_darwin_amd64.zip",
-        "platform": "darwin",
-        "arch": "x64",
-        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.43.1/mkr_darwin_amd64.zip"
-      },
-      {
-        "filename": "mkr_linux_386.tar.gz",
-        "platform": "linux",
-        "arch": "ia32",
-        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.43.1/mkr_linux_386.tar.gz"
-      },
-      {
-        "filename": "mkr_linux_amd64.tar.gz",
-        "platform": "linux",
-        "arch": "x64",
-        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.43.1/mkr_linux_amd64.tar.gz"
-      },
-      {
-        "filename": "mkr_linux_arm.tar.gz",
-        "platform": "linux",
-        "arch": "arm",
-        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.43.1/mkr_linux_arm.tar.gz"
-      },
-      {
-        "filename": "mkr_linux_arm64.tar.gz",
-        "platform": "linux",
-        "arch": "arm64",
-        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.43.1/mkr_linux_arm64.tar.gz"
-      }
-    ]
-  },
-  {
-    "version": "0.43.0",
-    "stable": true,
-    "release_url": "https://github.com/mackerelio/mkr/releases/tag/v0.43.0",
-    "files": [
-      {
-        "filename": "mkr_darwin_amd64.zip",
-        "platform": "darwin",
-        "arch": "x64",
-        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.43.0/mkr_darwin_amd64.zip"
-      },
-      {
-        "filename": "mkr_linux_386.tar.gz",
-        "platform": "linux",
-        "arch": "ia32",
-        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.43.0/mkr_linux_386.tar.gz"
-      },
-      {
-        "filename": "mkr_linux_amd64.tar.gz",
-        "platform": "linux",
-        "arch": "x64",
-        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.43.0/mkr_linux_amd64.tar.gz"
-      },
-      {
-        "filename": "mkr_linux_arm.tar.gz",
-        "platform": "linux",
-        "arch": "arm",
-        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.43.0/mkr_linux_arm.tar.gz"
-      },
-      {
-        "filename": "mkr_linux_arm64.tar.gz",
-        "platform": "linux",
-        "arch": "arm64",
-        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.43.0/mkr_linux_arm64.tar.gz"
-      }
-    ]
-  },
-  {
     "version": "0.42.0",
     "stable": true,
     "release_url": "https://github.com/mackerelio/mkr/releases/tag/v0.42.0",
@@ -2211,6 +2137,68 @@
         "platform": "linux",
         "arch": "x64",
         "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.30.0/mkr_linux_amd64.tar.gz"
+      }
+    ]
+  },
+  {
+    "version": "0.30.0",
+    "stable": true,
+    "release_url": "https://github.com/mackerelio/mkr/releases/tag/v0.30.0",
+    "files": [
+      {
+        "filename": "mkr_darwin_386.zip",
+        "platform": "darwin",
+        "arch": "ia32",
+        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.30.0/mkr_darwin_386.zip"
+      },
+      {
+        "filename": "mkr_darwin_amd64.zip",
+        "platform": "darwin",
+        "arch": "x64",
+        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.30.0/mkr_darwin_amd64.zip"
+      },
+      {
+        "filename": "mkr_linux_386.tar.gz",
+        "platform": "linux",
+        "arch": "ia32",
+        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.30.0/mkr_linux_386.tar.gz"
+      },
+      {
+        "filename": "mkr_linux_amd64.tar.gz",
+        "platform": "linux",
+        "arch": "x64",
+        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.30.0/mkr_linux_amd64.tar.gz"
+      }
+    ]
+  },
+  {
+    "version": "0.29.0",
+    "stable": true,
+    "release_url": "https://github.com/mackerelio/mkr/releases/tag/v0.29.0",
+    "files": [
+      {
+        "filename": "mkr_darwin_386.zip",
+        "platform": "darwin",
+        "arch": "ia32",
+        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.29.0/mkr_darwin_386.zip"
+      },
+      {
+        "filename": "mkr_darwin_amd64.zip",
+        "platform": "darwin",
+        "arch": "x64",
+        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.29.0/mkr_darwin_amd64.zip"
+      },
+      {
+        "filename": "mkr_linux_386.tar.gz",
+        "platform": "linux",
+        "arch": "ia32",
+        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.29.0/mkr_linux_386.tar.gz"
+      },
+      {
+        "filename": "mkr_linux_amd64.tar.gz",
+        "platform": "linux",
+        "arch": "x64",
+        "download_url": "https://github.com/mackerelio/mkr/releases/download/v0.29.0/mkr_linux_amd64.tar.gz"
       }
     ]
   },
