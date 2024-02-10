@@ -109,7 +109,7 @@ function dumpManifest(manifest: Manifest): string {
     JSON.stringify(
       [...manifest].sort((a, b) => semver.compare(b.version, a.version)),
       undefined,
-      "  "
+      "  ",
     ) + "\n"
   );
 }

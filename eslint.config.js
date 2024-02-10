@@ -25,7 +25,7 @@ export default [
           "@typescript-eslint/naming-convention": "off",
         },
       },
-    ]
+    ],
   ),
   ...map(
     {
@@ -43,6 +43,6 @@ export default [
           },
         },
       },
-    ]
+    ],
   ),
 ];
