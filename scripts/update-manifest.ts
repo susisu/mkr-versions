@@ -55,6 +55,7 @@ function convertRelease(release: Release): tc.IToolRelease | undefined {
   return {
     version,
     stable: !release.prerelease,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     release_url: release.html_url,
     files: release.assets.flatMap((asset) => convertAsset(asset)),
   };
@@ -66,6 +67,7 @@ function convertAsset(asset: Asset): readonly tc.IToolReleaseFile[] {
     filename: asset.name,
     platform: target.platform,
     arch: target.arch,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     download_url: asset.browser_download_url,
   }));
 }
