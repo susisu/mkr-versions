@@ -20,7 +20,7 @@ jobs:
       - run: pnpm update-manifest
         env:
           GITHUB_TOKEN: ${{ github.token }}
-      - uses: peter-evans/create-pull-request@v4
+      - uses: peter-evans/create-pull-request@v6
         with:
           branch: feat/update-manifest
           commit-message: 'feat: update manifest'
