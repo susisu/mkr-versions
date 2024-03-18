@@ -28,7 +28,7 @@
     "semver": "^7.6.0"
   },
   "devDependencies": {
-    "@susisu/eslint-config": "^0.0.79",
+    "@susisu/eslint-config": "^0.0.80",
     "eslint": "^8.57.0",
     "globals": "^14.0.0",
     "npm-run-all2": "^6.1.2",
