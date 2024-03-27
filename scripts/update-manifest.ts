@@ -134,7 +134,7 @@ async function writeManifest(manifest: Manifest): Promise<void> {
   await fs.writeFile(manifestFile, json, "utf-8");
 }
 
-main().catch((err) => {
+main().catch((err: unknown) => {
   // eslint-disable-next-line no-console
   console.error(String(err));
   process.exitCode = 1;
