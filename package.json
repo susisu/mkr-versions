@@ -21,8 +21,8 @@
   "dependencies": {
     "@actions/github": "^6.0.0",
     "@actions/tool-cache": "^2.0.1",
-    "@octokit/types": "^12.6.0",
-    "@types/node": "^20.11.30",
+    "@octokit/types": "^13.5.0",
+    "@types/node": "^20.12.7",
     "@types/semver": "^7.5.8",
     "jest-diff": "^29.7.0",
     "semver": "^7.6.0"
@@ -30,10 +30,10 @@
   "devDependencies": {
     "@susisu/eslint-config": "^0.0.81",
     "eslint": "^8.57.0",
-    "globals": "^15.0.0",
+    "globals": "^15.1.0",
     "npm-run-all2": "^6.1.2",
     "prettier": "^3.2.5",
-    "tsx": "^4.7.1",
-    "typescript": "^5.4.3"
+    "tsx": "^4.8.1",
+    "typescript": "^5.4.5"
   }
 }
