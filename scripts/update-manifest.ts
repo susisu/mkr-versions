@@ -91,7 +91,7 @@ const archsMap: ReadonlyMap<string, readonly string[]> = new Map([
 ]);
 
 function getTargets(asset: Asset): readonly Target[] {
-  const r = /^mkr_([^.]+)_([^.]+)\.(.+)$/.exec(asset.name);
+  const r = /^mkr_([^.]+)_([^.]+)\.(.+)$/u.exec(asset.name);
   if (!r) {
     return [];
   }
