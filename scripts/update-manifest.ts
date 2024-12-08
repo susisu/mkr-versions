@@ -122,7 +122,7 @@ async function testManifest(manifest: Manifest): Promise<void> {
   const content = await fs.readFile(manifestFile, "utf-8");
   if (json !== content) {
     // eslint-disable-next-line no-console
-    console.error(diffLinesUnified(content.split("\n"), json.split("\n")));
+    console.error(diffLinesUnified(content.split("\n"), json.split("\n"), { expand: false }));
     throw new Error("manifest did not match");
   }
 }
