@@ -5,7 +5,7 @@ import github from "@actions/github";
 import type tc from "@actions/tool-cache";
 import type octokit from "@octokit/types";
 import semver from "semver";
-import { diffStringsUnified } from "@vitest/utils/diff";
+import { diffLinesUnified } from "@vitest/utils/diff";
 
 async function main(): Promise<void> {
   const token = process.env["GITHUB_TOKEN"];
@@ -122,7 +122,7 @@ async function testManifest(manifest: Manifest): Promise<void> {
   const content = await fs.readFile(manifestFile, "utf-8");
   if (json !== content) {
     // eslint-disable-next-line no-console
-    console.error(diffStringsUnified(content, json));
+    console.error(diffLinesUnified(content.split("\n"), json.split("\n")));
     throw new Error("manifest did not match");
   }
 }
