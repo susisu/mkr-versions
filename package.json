@@ -24,7 +24,7 @@
     "@octokit/types": "^13.6.2",
     "@types/node": "^22.10.1",
     "@types/semver": "^7.5.8",
-    "jest-diff": "^29.7.0",
+    "@vitest/utils": "^2.1.8",
     "semver": "^7.6.3"
   },
   "devDependencies": {

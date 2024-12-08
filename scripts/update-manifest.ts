@@ -5,7 +5,7 @@ import github from "@actions/github";
 import type tc from "@actions/tool-cache";
 import type octokit from "@octokit/types";
 import semver from "semver";
-import { diffStringsUnified } from "jest-diff";
+import { diffStringsUnified } from "@vitest/utils/diff";
 
 async function main(): Promise<void> {
   const token = process.env["GITHUB_TOKEN"];
