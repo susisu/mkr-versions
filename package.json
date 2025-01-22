@@ -20,20 +20,20 @@
   },
   "dependencies": {
     "@actions/github": "^6.0.0",
-    "@actions/tool-cache": "^2.0.1",
-    "@octokit/types": "^13.6.2",
-    "@types/node": "^22.10.1",
+    "@actions/tool-cache": "^2.0.2",
+    "@octokit/types": "^13.7.0",
+    "@types/node": "^22.10.7",
     "@types/semver": "^7.5.8",
-    "@vitest/utils": "^2.1.8",
+    "@vitest/utils": "^3.0.3",
     "semver": "^7.6.3"
   },
   "devDependencies": {
-    "@susisu/eslint-config": "^0.0.92",
-    "eslint": "^9.16.0",
-    "globals": "^15.13.0",
-    "npm-run-all2": "^7.0.1",
+    "@susisu/eslint-config": "^0.0.93",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
+    "npm-run-all2": "^7.0.2",
     "prettier": "^3.4.2",
     "tsx": "^4.19.2",
-    "typescript": "~5.7.2"
+    "typescript": "~5.7.3"
   }
 }
