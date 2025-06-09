@@ -7,7 +7,7 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       '@actions/github':
         specifier: ^6.0.1
         version: 6.0.1
@@ -17,6 +17,9 @@ importers:
       '@octokit/types':
         specifier: ^14.1.0
         version: 14.1.0
+      '@susisu/eslint-config':
+        specifier: ^0.0.98
+        version: 0.0.98(eslint@9.28.0)(typescript@5.8.3)
       '@types/node':
         specifier: ^22.15.30
         version: 22.15.30
@@ -26,13 +29,6 @@ importers:
       '@vitest/utils':
         specifier: ^3.2.3
         version: 3.2.3
-      semver:
-        specifier: ^7.7.2
-        version: 7.7.2
-    devDependencies:
-      '@susisu/eslint-config':
-        specifier: ^0.0.98
-        version: 0.0.98(eslint@9.28.0)(typescript@5.8.3)
       eslint:
         specifier: ^9.28.0
         version: 9.28.0
@@ -45,6 +41,9 @@ importers:
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
+      semver:
+        specifier: ^7.7.2
+        version: 7.7.2
       tsx:
         specifier: ^4.19.4
         version: 4.19.4
