@@ -15,8 +15,8 @@
     "lint": "eslint --fix '*.js' scripts",
     "lint:check": "eslint '*.js' scripts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "update-manifest": "tsx scripts/update-manifest.ts",
-    "test-manifest": "tsx scripts/update-manifest.ts test"
+    "update-manifest": "node --experimental-strip-types scripts/update-manifest.ts",
+    "test-manifest": "node --experimental-strip-types scripts/update-manifest.ts test"
   },
   "devDependencies": {
     "@actions/github": "^6.0.1",
@@ -31,7 +31,6 @@
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.5.3",
     "semver": "^7.7.2",
-    "tsx": "^4.19.4",
     "typescript": "~5.8.3"
   }
 }
