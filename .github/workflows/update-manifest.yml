@@ -1,4 +1,5 @@
 name: 'Update Manifest'
+
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -14,8 +15,8 @@ jobs:
           version: 10
       - uses: actions/setup-node@v5
         with:
-          node-version: '22'
-          cache: 'pnpm'
+          node-version: 22
+          cache: pnpm
       - run: pnpm install
       - run: pnpm update-manifest
         env:
