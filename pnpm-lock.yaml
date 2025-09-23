@@ -15,8 +15,8 @@ importers:
         specifier: ^2.0.2
         version: 2.0.2
       '@octokit/types':
-        specifier: ^15.0.0
-        version: 15.0.0
+        specifier: ^14.1.0
+        version: 14.1.0
       '@susisu/eslint-config':
         specifier: ^0.0.100
         version: 0.0.100(eslint@9.36.0)(typescript@5.9.2)
@@ -160,8 +160,8 @@ packages:
   '@octokit/openapi-types@24.2.0':
     resolution: {integrity: sha512-9sIH3nSUttelJSXUrmGzl7QUBFul0/mB8HRYl3fOlgHbIWG+WnYDXU3v/2zMtAvuzZ/ed00Ei6on975FhBfzrg==}
 
-  '@octokit/openapi-types@26.0.0':
-    resolution: {integrity: sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA==}
+  '@octokit/openapi-types@25.1.0':
+    resolution: {integrity: sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA==}
 
   '@octokit/plugin-paginate-rest@9.2.2':
     resolution: {integrity: sha512-u3KYkGF7GcZnSD/3UP0S7K5XUFT2FkOQdcfXZGZQPGv3lm4F2Xbf71lvjldr8c1H3nNbF+33cLEkWYbokGWqiQ==}
@@ -189,8 +189,8 @@ packages:
   '@octokit/types@13.10.0':
     resolution: {integrity: sha512-ifLaO34EbbPj0Xgro4G5lP5asESjwHracYJvVaPIyXMuiuXLlhic3S47cBdTb+jfODkTE5YtGCLt3Ay3+J97sA==}
 
-  '@octokit/types@15.0.0':
-    resolution: {integrity: sha512-8o6yDfmoGJUIeR9OfYU0/TUJTnMPG2r68+1yEdUeG2Fdqpj8Qetg0ziKIgcBm0RW/j29H41WP37CYCEhp6GoHQ==}
+  '@octokit/types@14.1.0':
+    resolution: {integrity: sha512-1y6DgTy8Jomcpu33N+p5w58l6xyt55Ar2I91RPiIA0xCJBXyUAhXCcmZaDWSANiha7R9a6qJJ2CRomGPZ6f46g==}
 
   '@stylistic/eslint-plugin@5.4.0':
     resolution: {integrity: sha512-UG8hdElzuBDzIbjG1QDwnYH0MQ73YLXDFHgZzB4Zh/YJfnw8XNsloVtytqzx0I2Qky9THSdpTmi8Vjn/pf/Lew==}
@@ -876,7 +876,7 @@ snapshots:
 
   '@octokit/openapi-types@24.2.0': {}
 
-  '@octokit/openapi-types@26.0.0': {}
+  '@octokit/openapi-types@25.1.0': {}
 
   '@octokit/plugin-paginate-rest@9.2.2(@octokit/core@5.2.2)':
     dependencies:
@@ -909,9 +909,9 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 24.2.0
 
-  '@octokit/types@15.0.0':
+  '@octokit/types@14.1.0':
     dependencies:
-      '@octokit/openapi-types': 26.0.0
+      '@octokit/openapi-types': 25.1.0
 
   '@stylistic/eslint-plugin@5.4.0(eslint@9.36.0)':
     dependencies:
