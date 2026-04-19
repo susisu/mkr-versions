@@ -19,18 +19,18 @@
     "test-manifest": "node --experimental-strip-types scripts/update-manifest.ts test"
   },
   "devDependencies": {
-    "@actions/github": "^6.0.1",
-    "@actions/tool-cache": "^2.0.2",
-    "@octokit/types": "^14.1.0",
-    "@susisu/eslint-config": "^0.0.101",
-    "@types/node": "^25.0.1",
+    "@actions/github": "^9.1.0",
+    "@actions/tool-cache": "^4.0.0",
+    "@octokit/types": "^16.0.0",
+    "@susisu/eslint-config": "^0.0.102",
+    "@types/node": "^25.6.0",
     "@types/semver": "^7.7.1",
-    "@vitest/utils": "^4.0.15",
-    "eslint": "^9.39.1",
-    "globals": "^16.5.0",
+    "@vitest/utils": "^4.1.4",
+    "eslint": "^10.2.1",
+    "globals": "^17.5.0",
     "npm-run-all2": "^8.0.4",
-    "prettier": "^3.7.4",
-    "semver": "^7.7.3",
-    "typescript": "~5.9.3"
+    "prettier": "^3.8.3",
+    "semver": "^7.7.4",
+    "typescript": "~6.0.3"
   }
 }
