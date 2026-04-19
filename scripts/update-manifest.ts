@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import url from "node:url";
-import github from "@actions/github";
-import type tc from "@actions/tool-cache";
+import { getOctokit } from "@actions/github";
+import type { IToolRelease, IToolReleaseFile } from "@actions/tool-cache";
 import type octokit from "@octokit/types";
 import semver from "semver";
 import { diffLinesUnified } from "@vitest/utils/diff";
@@ -27,7 +27,7 @@ type Release = octokit.Endpoints["GET /repos/{owner}/{repo}/releases"]["response
 type Asset = Release["assets"][number];
 
 async function listReleases(token: string): Promise<Release[]> {
-  const oktokit = github.getOctokit(token);
+  const oktokit = getOctokit(token);
   const releases = await oktokit.paginate("GET /repos/{owner}/{repo}/releases", {
     owner: "mackerelio",
     repo: "mkr",
@@ -35,7 +35,7 @@ async function listReleases(token: string): Promise<Release[]> {
   return releases;
 }
 
-type Manifest = readonly tc.IToolRelease[];
+type Manifest = readonly IToolRelease[];
 
 function generateManifest(releases: readonly Release[]): Manifest {
   return releases.flatMap((release) => {
@@ -44,7 +44,7 @@ function generateManifest(releases: readonly Release[]): Manifest {
   });
 }
 
-function convertRelease(release: Release): tc.IToolRelease | undefined {
+function convertRelease(release: Release): IToolRelease | undefined {
   if (release.draft) {
     return undefined;
   }
@@ -60,7 +60,7 @@ function convertRelease(release: Release): tc.IToolRelease | undefined {
   };
 }
 
-function convertAsset(asset: Asset): readonly tc.IToolReleaseFile[] {
+function convertAsset(asset: Asset): readonly IToolReleaseFile[] {
   const targets = getTargets(asset);
   return targets.map((target) => ({
     filename: asset.name,
