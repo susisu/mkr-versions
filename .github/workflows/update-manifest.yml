@@ -1,8 +1,8 @@
-name: 'Update Manifest'
+name: "Update Manifest"
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -24,8 +24,8 @@ jobs:
       - uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           branch: feat/update-manifest
-          commit-message: 'feat: update manifest'
-          title: 'Update Manifest'
+          commit-message: "feat: update manifest"
+          title: "Update Manifest"
           body: |
             See [releases](https://github.com/mackerelio/mkr/releases)
           delete-branch: true
