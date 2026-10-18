@@ -1,11 +1,11 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import url from "node:url";
+
 import { getOctokit } from "@actions/github";
 import type { IToolRelease, IToolReleaseFile } from "@actions/tool-cache";
 import type octokit from "@octokit/types";
-import semver from "semver";
 import { diffLinesUnified } from "@vitest/utils/diff";
+import semver from "semver";
 
 async function main(): Promise<void> {
   const token = process.env["GITHUB_TOKEN"];
@@ -75,7 +75,7 @@ type Target = Readonly<{
   arch: string;
 }>;
 
-const archiveExts: readonly string[] = ["tar.gz", "zip"];
+const archiveExts: ReadonlySet<string> = new Set(["tar.gz", "zip"]);
 
 const platformsMap: ReadonlyMap<string, readonly string[]> = new Map([
   ["linux", ["linux"]],
@@ -96,7 +96,7 @@ function getTargets(asset: Asset): readonly Target[] {
     return [];
   }
   const [, p, a, x] = r;
-  if (!archiveExts.includes(x)) {
+  if (!archiveExts.has(x)) {
     return [];
   }
   const platforms = platformsMap.get(p) ?? [];
@@ -114,12 +114,11 @@ function dumpManifest(manifest: Manifest): string {
   );
 }
 
-const filename = url.fileURLToPath(import.meta.url);
-const manifestFile = path.resolve(path.dirname(filename), "..", "versions-manifest.json");
+const manifestFile = path.resolve(import.meta.dirname, "..", "versions-manifest.json");
 
 async function testManifest(manifest: Manifest): Promise<void> {
   const json = dumpManifest(manifest);
-  const content = await fs.readFile(manifestFile, "utf-8");
+  const content = await fs.readFile(manifestFile, "utf8");
   if (json !== content) {
     // eslint-disable-next-line no-console
     console.error(diffLinesUnified(content.split("\n"), json.split("\n"), { expand: false }));
@@ -129,11 +128,7 @@ async function testManifest(manifest: Manifest): Promise<void> {
 
 async function writeManifest(manifest: Manifest): Promise<void> {
   const json = dumpManifest(manifest);
-  await fs.writeFile(manifestFile, json, "utf-8");
+  await fs.writeFile(manifestFile, json, "utf8");
 }
 
-main().catch((err: unknown) => {
-  // eslint-disable-next-line no-console
-  console.error(String(err));
-  process.exitCode = 1;
-});
+await main();
