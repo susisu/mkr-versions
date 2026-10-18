@@ -19,18 +19,18 @@
     "test-manifest": "node --experimental-strip-types scripts/update-manifest.ts test"
   },
   "devDependencies": {
-    "@actions/github": "^9.1.0",
+    "@actions/github": "^9.1.1",
     "@actions/tool-cache": "^4.0.0",
-    "@octokit/types": "^16.0.0",
+    "@octokit/types": "^18.0.0",
     "@susisu/oxlint-config": "^0.0.1",
-    "@types/node": "^25.6.0",
-    "@types/semver": "^7.7.1",
-    "@vitest/utils": "^4.1.4",
-    "npm-run-all2": "^8.0.4",
+    "@types/node": "^26.6.5",
+    "@types/semver": "^7.8.0",
+    "@vitest/utils": "^5.0.5",
+    "npm-run-all2": "^9.0.3",
     "oxfmt": "^0.73.0",
     "oxlint": "^1.88.0",
     "oxlint-tsgolint": "^7.0.2004",
-    "semver": "^7.7.4",
-    "typescript": "~6.0.3"
+    "semver": "^7.8.5",
+    "typescript": "~7.0.2"
   }
 }
